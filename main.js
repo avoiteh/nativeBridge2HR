@@ -1,4 +1,4 @@
-function guestBook(container, myOwnName){
+function guestBook(container, myOwnName, currentUser){
 	this.container = container;
 	this.gbData = [];
 	this.myOwnName = myOwnName;
@@ -6,11 +6,22 @@ function guestBook(container, myOwnName){
 	this.currentDate = null;
 	this.newMess = null;
 	this.timeout = true;
+	this.timeOptions = {
+		year: 'numeric',
+		month: 'numeric',
+		day: 'numeric',
+		hour: 'numeric',
+		minute: 'numeric',
+		timezone: 'UTC'
+	};
 
-	this.currentUser = {"uid":"3", "uname":"Коля"};
+	this.currentUser = currentUser;//{"uid":"3", "uname":"Коля"};
+
+	this.pathname = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1 );
 
 	this.initGB = function(){
-		GloAJAXquery(window.location.pathname+'guestBook.php', '', this.AJAXresult, this);
+		console.log(this.pathname);
+		GloAJAXquery(this.pathname+'guestBook.php', '', this.AJAXresult, this);
 	}
 	this.AJAXresult = function(str_json){
 		this.gbData = eval(str_json);
@@ -31,7 +42,7 @@ function guestBook(container, myOwnName){
 			if(this.gbData[i].parent == parent){
 				s+='<div class="panel panel-warning"><p>'+this.gbData[i].date+'</p>';
 				s+='<p>'+this.gbData[i].uname+(this.gbData[i].uid==0 ? ' (anonymus)':'')+'</p>';
-				if(this.gbData[i].uid == this.currentUser.uid){
+				if(this.currentUser && this.gbData[i].uid == this.currentUser.uid){
 					s+='<textarea class="form-control" rows="5" cols="50" id="messTEXT'+this.gbData[i].id+'">'+this.gbData[i].mess+'</textarea>';
 					s+='<button class="btn btn-success btn-xs" onClick="'+this.myOwnName+'.onClickSaveAnswer('+this.gbData[i].id+')">Сохранить</button>';
 				}else{
@@ -58,11 +69,20 @@ function guestBook(container, myOwnName){
 		this.onClickCancelAnswer();
 		this.answerDIV=document.getElementById(id);
 		this.answerDIV.style.display = 'block';
-		this.currentDate = new Date;
-		this.answerDIV.innerHTML = '<p>'+this.currentDate+'</p><p>'+this.currentUser.uname+'</p><textarea class="form-control" rows="5" cols="50" id="addAnswer"></textarea>'+
+
+		this.currentDate = (new Date()).toLocaleString("ru", this.timeOptions);
+		console.log(this.currentDate);
+		var s='<p>'+this.currentDate+'</p><p>';
+		if(this.currentUser && this.currentUser.uin!=0){
+			s+=this.currentUser.uname;
+		}else{
+			s+='<input type="text" class="form-control" id="addAnswerUname">';
+		}
+		s+='</p><textarea class="form-control" rows="5" cols="50" id="addAnswer"></textarea>'+
 		'<button class="btn btn-success btn-xs" onClick="'+this.myOwnName+'.onClickAddAnswer(\'0\')">Сохранить</button>'+
 		'<button class="btn btn-success btn-xs" onClick="'+this.myOwnName+'.onClickCancelAnswer()">Отменить</button>';
-		this.timeout=false; setTimeout(10000, this.myOwnName+'.timeout=true');
+		this.answerDIV.innerHTML = s;
+		this.timeout=false; setTimeout(this.myOwnName+'.timeout=true', 10000);
 	}
 	this.onClickAnswer = function(id){
 		if(!this.timeout){
@@ -72,22 +92,36 @@ function guestBook(container, myOwnName){
 		this.onClickCancelAnswer();
 		this.answerDIV=document.getElementById('answerDIV'+id);
 		this.answerDIV.style.display = 'block';
-		this.currentDate = new Date;
-		this.answerDIV.innerHTML = '<p>'+this.currentDate+'</p><p>'+this.currentUser.uname+'</p><textarea class="form-control" rows="5" cols="50" id="addAnswer"></textarea>'+
+		this.currentDate = (new Date()).toLocaleString("ru", this.timeOptions);
+		var s= '<p>'+this.currentDate+'</p><p>';
+		if(this.currentUser && this.currentUser.uin!="0"){
+			s+=this.currentUser.uname;
+		}else{
+			s+='<input type="text" class="form-control" id="addAnswerUname">';
+		}
+		s+='</p><textarea class="form-control" rows="5" cols="50" id="addAnswer"></textarea>'+
 		'<button class="btn btn-success btn-xs" onClick="'+this.myOwnName+'.onClickAddAnswer('+id+')">Сохранить</button>'+
 		'<button class="btn btn-success btn-xs" onClick="'+this.myOwnName+'.onClickCancelAnswer()">Отменить</button>';
-		this.timeout=false; setTimeout(10000, this.myOwnName+'.timeout=true');
+		this.answerDIV.innerHTML = s;
+		this.timeout=false; setTimeout(this.myOwnName+'.timeout=true', 10000);
 	}
 	this.onClickSaveAnswer = function(id){
-		GloAJAXquery(window.location.pathname+'guestBook.php', JSON.stringify({"id":id,"mess":document.getElementById('messTEXT'+id).value}), this.AJAXAfterSave, this);
+		GloAJAXquery(this.pathname+'guestBook.php', JSON.stringify({"id":id,"mess":document.getElementById('messTEXT'+id).value}), this.AJAXAfterSave, this);
 	}
 	this.AJAXAfterSave = function(text) {
 		console.log(text);
 	}
 	this.onClickAddAnswer = function(parent){
+		if(this.currentUser && this.currentUser.uin!="0"){
+			var uid = this.currentUser.uid;
+			var uname = this.currentUser.uname;
+		}else{
+			var uid = "0";
+			var uname = document.getElementById('addAnswerUname').value;
+		}
 		//надо запрашивать сервер на добавление и только тогда сохранять в локале
-		this.newMess = {"id":"new","uid":this.currentUser.uid,"uname":this.currentUser.uname,"date":this.currentDate,"mess":document.getElementById('addAnswer').value,"parent":parent};
-		GloAJAXquery(window.location.pathname+'guestBook.php', JSON.stringify(this.newMess), this.AJAXAfterAdd, this);
+		this.newMess = {"id":"new","uid":uid,"uname":uname,"date":this.currentDate,"mess":document.getElementById('addAnswer').value,"parent":parent};
+		GloAJAXquery(this.pathname+'guestBook.php', JSON.stringify(this.newMess), this.AJAXAfterAdd, this);
 	}
 	this.AJAXAfterAdd = function(text){
 console.log(text);
@@ -105,7 +139,7 @@ console.log(text);
 }
 
 var guestBook;
-function startGB(containerName){
-	guestBook = new guestBook(document.getElementById(containerName), 'guestBook');
+function startGB(containerName, uid, uname){
+	guestBook = new guestBook(document.getElementById(containerName), 'guestBook', uid ? {"uid":uid, "uname":uname} : false);
 	guestBook.initGB();
 }

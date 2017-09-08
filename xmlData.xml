@@ -101,7 +101,7 @@
 	<uid>3</uid>
 	<uname>Коля</uname>
 	<date>2017-09-08T13:00:08.809Z</date>
-	<mess>Швакабундра 345345345</mess>
+	<mess>Швакабундра</mess>
 	<parent>1</parent>
 </message>
 <message>
@@ -240,6 +240,38 @@ D ktve "зимой"</mess>
 	<uname>Коля</uname>
 	<date>2017-09-08T13:51:27.138Z</date>
 	<mess>Эгрозеба</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>31</id>
+	<uid>0</uid>
+	<uname>Зелебоня</uname>
+	<date>2017-09-08T14:12:01.977Z</date>
+	<mess>а мывалдоива выи вып ывпи ывип пв а</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>32</id>
+	<uid>0</uid>
+	<uname>Клапуцаций</uname>
+	<date>2017-09-08T14:12:20.952Z</date>
+	<mess>3242 356 5635 1631563</mess>
+	<parent>30</parent>
+</message>
+<message>
+	<id>33</id>
+	<uid>0</uid>
+	<uname>Егрозеба</uname>
+	<date>2017-09-08T14:25:52.788Z</date>
+	<mess>Шмакодявриус</mess>
+	<parent>13</parent>
+</message>
+<message>
+	<id>34</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T14:26:26.133Z</date>
+	<mess>валдопруа уеруе ур урцук</mess>
 	<parent>0</parent>
 </message>
 </messages>
