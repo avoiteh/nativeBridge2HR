@@ -1,0 +1,245 @@
+<?xml version='1.0'?> 
+<messages><message>
+	<id>1</id>
+	<uid>0</uid>
+	<uname>Вася</uname>
+	<date>2017-09-07 12:55</date>
+	<mess>0987654321</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>2</id>
+	<uid>1</uid>
+	<uname>Петя</uname>
+	<date>2017-09-07 12:56</date>
+	<mess>Однажды в студёную зимнюю пору...</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>3</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-07 13:05</date>
+	<mess>Однажды в студёную зимнюю пору...
+Я из лесу вышел</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>4</id>
+	<uid>0</uid>
+	<uname>Миша</uname>
+	<date>2017-09-07 13:15</date>
+	<mess>Однажды в студёную зимнюю пору...</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>5</id>
+	<uid>0</uid>
+	<uname>Лёша</uname>
+	<date>2017-09-07 13:19</date>
+	<mess>Однажды в студёную зимнюю пору...</mess>
+	<parent>2</parent>
+</message>
+<message>
+	<id>6</id>
+	<uid>5</uid>
+	<uname>Юля</uname>
+	<date>2017-09-07 13:25</date>
+	<mess>Однажды в студёную зимнюю пору...</mess>
+	<parent>2</parent>
+</message>
+<message>
+	<id>7</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T11:02:51.680Z</date>
+	<mess>Джавахарлал Неру!</mess>
+	<parent>2</parent>
+</message>
+<message>
+	<id>8</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T11:50:06.729Z</date>
+	<mess>Зимой и летом стройная зенёлая была</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>9</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T11:59:03.030Z</date>
+	<mess>Тырыбыщ!2222</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>10</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T12:04:08.712Z</date>
+	<mess>фвыафвывпфы упрупрупук  впфывпы</mess>
+	<parent>5</parent>
+</message>
+<message>
+	<id>11</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T12:04:49.547Z</date>
+	<mess>13241355235</mess>
+	<parent>5</parent>
+</message>
+<message>
+	<id>12</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T12:59:37.831Z</date>
+	<mess>Пуситуси</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>13</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:00:08.809Z</date>
+	<mess>Швакабундра 345345345</mess>
+	<parent>1</parent>
+</message>
+<message>
+	<id>14</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:02:16.819Z</date>
+	<mess>Ляпундра</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>15</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:02:36.457Z</date>
+	<mess>Ляпундра</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>16</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:02:53.579Z</date>
+	<mess>Ляпундра 33</mess>
+	<parent>1</parent>
+</message>
+<message>
+	<id>17</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:04:24.462Z</date>
+	<mess>фвымавфыпфыпы</mess>
+	<parent>1</parent>
+</message>
+<message>
+	<id>18</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:05:43.781Z</date>
+	<mess>ыапыфапе345е3 355 35нр325</mess>
+	<parent>1</parent>
+</message>
+<message>
+	<id>19</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:05:51.756Z</date>
+	<mess>вапр 4у46 436и4и </mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>20</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:06:27.473Z</date>
+	<mess>йцукен</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>21</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:06:41.287Z</date>
+	<mess>фывапр</mess>
+	<parent>1</parent>
+</message>
+<message>
+	<id>22</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:17:30.471Z</date>
+	<mess>121416753</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>23</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:17:55.696Z</date>
+	<mess>sdfgw hgwrgqwgwgr</mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>24</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:18:31.352Z</date>
+	<mess>sfbgsasfag gsf sfgs gs </mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>25</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:18:31.352Z</date>
+	<mess>sfbgsasfag gsf sfgs gs </mess>
+	<parent>0</parent>
+</message>
+<message>
+	<id>26</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:19:00.557Z</date>
+	<mess>Ляпуцация</mess>
+	<parent>13</parent>
+</message>
+<message>
+	<id>27</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:20:24.126Z</date>
+	<mess>HJGERFRBT
+</mess>
+	<parent>13</parent>
+</message>
+<message>
+	<id>28</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:23:56.612Z</date>
+	<mess>Тарапунька.
+D ktve "зимой"</mess>
+	<parent>13</parent>
+</message>
+<message>
+	<id>29</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:51:02.469Z</date>
+	<mess>Зелибоба</mess>
+	<parent>1</parent>
+</message>
+<message>
+	<id>30</id>
+	<uid>3</uid>
+	<uname>Коля</uname>
+	<date>2017-09-08T13:51:27.138Z</date>
+	<mess>Эгрозеба</mess>
+	<parent>0</parent>
+</message>
+</messages>
